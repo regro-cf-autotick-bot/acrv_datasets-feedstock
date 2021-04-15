@@ -1,5 +1,5 @@
 {% set name = "acrv_datasets" %}
-{% set version = "0.9.1" %}
+{% set version = "0.9.2" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c1ccbcef2bc2406f9bcc431027847cf33c5e303d5032136084445cb23b98e9c1
+  sha256: eea1717ddd45457aa719fca43727e743f240185cefdbf8a5a72644d08a37ab1c
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -39,7 +39,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Wrapper for easy dataset access (used in Best of ACRV codebases)'
+  summary: Wrapper for easy dataset access (used in Best of ACRV codebases)
   description: |
     The ACRV Datasets package is a light wrapper for generically managing
     datasets. The package supports any dataset, as long as it has a public URL.
