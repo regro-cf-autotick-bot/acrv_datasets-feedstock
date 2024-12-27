@@ -1,11 +1,11 @@
-About acrv_datasets
-===================
+About acrv_datasets-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/acrv_datasets-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/best-of-acrv/acrv-datasets
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/acrv_datasets-feedstock/blob/master/LICENSE.txt)
 
 Summary: Wrapper for easy dataset access (used in Best of ACRV codebases)
 
@@ -26,8 +26,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12451&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/acrv_datasets-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12451&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/acrv_datasets-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -50,23 +50,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `acrv_datasets` can be installed with:
+Once the `conda-forge` channel has been enabled, `acrv_datasets` can be installed with `conda`:
 
 ```
 conda install acrv_datasets
 ```
 
-It is possible to list all of the versions of `acrv_datasets` available on your platform with:
+or with `mamba`:
+
+```
+mamba install acrv_datasets
+```
+
+It is possible to list all of the versions of `acrv_datasets` available on your platform with `conda`:
 
 ```
 conda search acrv_datasets --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search acrv_datasets --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search acrv_datasets --channel conda-forge
+
+# List packages depending on `acrv_datasets`:
+mamba repoquery whoneeds acrv_datasets --channel conda-forge
+
+# List dependencies of `acrv_datasets`:
+mamba repoquery depends acrv_datasets --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -76,10 +102,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
